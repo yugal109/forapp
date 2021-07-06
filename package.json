@@ -1,0 +1,23 @@
+{
+  "name": "forapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yugal109/forapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yugal109/forapp/issues"
+  },
+  "homepage": "https://github.com/yugal109/forapp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
