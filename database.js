@@ -3,11 +3,12 @@ require("dotenv").config()
 
 
 const pool = new Pool({
-  host: "localhost",
-  user: "postgres",
-  password: process.env.PASSWORD,
-  database: "forapp",
-  port: 5432
+  // host: "localhost",
+  // user: "postgres",
+  // password: process.env.PASSWORD,
+  // database: "forapp",
+  // port: 5432
+  connectionString: process.env.DATABASE_URL,
 });
 
 const connect = () => {
