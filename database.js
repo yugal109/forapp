@@ -1,9 +1,11 @@
 const { Pool } = require("pg");
+require("dotenv").config()
+
 
 const pool = new Pool({
   host: "localhost",
   user: "postgres",
-  password: "pythonjs",
+  password: process.env.PASSWORD,
   database: "forapp",
   port: 5432
 });
@@ -18,7 +20,7 @@ const connect = () => {
       if (err) {
         return console.error("Error executing query", err.stack);
       }
-      // console.log(result.rows)
+      console.log(result.rows)
     });
   });
 };
