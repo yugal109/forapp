@@ -1,31 +1,27 @@
-const {Pool}=require("pg")
+const { Pool } = require("pg");
 
 const pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    password:'pythonjs',
-    database:'forapp',
-    port:5432
-  })
+  host: "localhost",
+  user: "postgres",
+  password: "pythonjs",
+  database: "forapp",
+  port: 5432
+});
 
-const connect=()=>{
-
-
-
-
-pool.connect((err, client, release) => {
-  if (err) {
-    return console.error('Error acquiring client', err.stack)
-  }
-  client.query('SELECT NOW()', (err, result) => {
-    release()
+const connect = () => {
+  pool.connect((err, client, release) => {
     if (err) {
-      return console.error('Error executing query', err.stack)
+      return console.error("Error acquiring client", err.stack);
     }
-    // console.log(result.rows)
-  })
-})
-}
+    client.query("SELECT NOW()", (err, result) => {
+      release();
+      if (err) {
+        return console.error("Error executing query", err.stack);
+      }
+      // console.log(result.rows)
+    });
+  });
+};
 
-exports.connect=connect
-exports.pool=pool
+exports.connect = connect;
+exports.pool = pool;
